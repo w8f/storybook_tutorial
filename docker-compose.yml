@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  front:
+    build:
+      context: ./
+      dockerfile: ./docker/front/Dockerfile
+    command: sh -c "npm run start"
+    ports:
+      - "3000:3000"
+      - "6006:6006"
+    tty: true
+    volumes:
+      - "./front:/front"
+    working_dir: /front
