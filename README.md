@@ -6,8 +6,11 @@ Storybook tutorial の学習メモ
 
 - [Storybook tutorial](#storybook-tutorial)
   - [環境構築](#環境構築)
+  - [スナップショットテスト](#スナップショットテスト)
   - [トラブルシューティング](#トラブルシューティング)
     - [npx degit でパッケージを fetch できない時](#npx-degit-でパッケージを-fetch-できない時)
+
+---
 
 ## 環境構築
 
@@ -41,7 +44,31 @@ npx degit chromaui/learnstorybook-code/src/assets/font src/assets/font
 npx degit chromaui/learnstorybook-code/src/assets/icon src/assets/icon
 ```
 
+---
+
+## スナップショットテスト
+
+```sh
+# Storyshots アドオンを追加
+yarn add -D @storybook/addon-storyshots react-test-renderer
+```
+
+```js
+// src/storybook.test.js
+
+import initStoryshots from '@storybook/addon-storyshots';
+initStoryshots();
+```
+
+テスト実行
+```sh
+yarn test
+```
+
+---
+
 ## トラブルシューティング
+
 
 ### npx degit でパッケージを fetch できない時
 
